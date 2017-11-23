@@ -1,0 +1,7 @@
+SELECT Control_rem.id_rem AS remision, Control_rem.fecha_s,;
+  IIF(.NOT.EMPTY(Control_rem.fechaverif),"Recibida ","Pendiente") AS status,;
+  Control_rem.oper AS operador;
+ FROM ;
+     control_rem;
+ WHERE  Control_rem.estatus <> ( 0 );
+ INTO TABLE C:\sidob\tablas\base_rem.dbf  

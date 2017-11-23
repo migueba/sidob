@@ -1,0 +1,4 @@
+SELECT Doblado_dev.*;
+ FROM doblado!doblado_dev;
+ ORDER BY Doblado_dev.nmemo;
+ INTO TABLE C:\SIDOB\tablas\dev_base.dbf  

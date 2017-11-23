@@ -1,0 +1,11 @@
+SELECT Maquilas.fecha_s, Maquilas.folio_s,;
+  IIF(Maquilas.origen="L","LAMINADOS",IIF(Maquilas.origen="A","AFELPADOS",IIF(Maquilas.origen="Ñ","TEÑIDO","ESTAMPADOS"))) AS origen,;
+  Maquilas.clave_t, Maquilas.clave_des, Maquilas.arecibir,;
+  IIF(Maquilas.estatus=1,"EN MAQUILA",IIF(Maquilas.estatus=2,"ENTREGA PARCIAL","ENTREGA CUBIERTA")) AS estatus,;
+  0 AS sel, Maquilas.id_maq, Maquilas.origen AS ori;
+ FROM ;
+     almacen!maquilas;
+ WHERE  EMPTY(Maquilas.fecha_rec) ;
+   AND  (  Maquilas.estatus <> ( 0 );
+   AND  Maquilas.tipo = ( 1 ) );
+ INTO TABLE C:\sidob\tablas\maq_dob.dbf  

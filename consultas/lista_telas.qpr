@@ -1,0 +1,8 @@
+SELECT Telas.clave_t, Telas.nombre, Telas.clave_tg,;
+  iif( Telas.crudos=.t., Telas.peso3,  iif(Telas.peso<>0, telas.peso,telas.peso3)) as peso;
+ FROM ;
+     telas;
+ WHERE  Telas.clave_tg = ( _tela_gral );
+ ORDER BY Telas.nombre;
+ INTO TABLE "c:\sidob\tablas\lista_telas.dbf"  
+

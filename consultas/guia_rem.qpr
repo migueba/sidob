@@ -1,0 +1,7 @@
+SELECT Controlrem_prefe.id_rem AS folio_s,;
+  Controlrem_prefe.fecha_s AS salida,;
+  IIF(.NOT.EMPTY(Controlrem_prefe.fechaverif),"Recibida ","Pendiente") AS obspref;
+ FROM ;
+     controlrem_prefe;
+ WHERE  Controlrem_prefe.estatus <> ( 0 );
+ INTO TABLE c:\sidob\tablas\guia_rem.dbf  

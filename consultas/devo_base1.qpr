@@ -1,0 +1,8 @@
+SELECT Doblado_devoluciones.num_entrada AS docto,;
+  Doblado_devoluciones.clavetela, Doblado_devoluciones.fechembolsado,;
+  Doblado_devoluciones.id_ent AS id_entrada, "devol" AS tipo,;
+  Doblado_devoluciones.causa AS lugar;
+ FROM ;
+     doblado_devoluciones;
+ GROUP BY Doblado_devoluciones.memorandum;
+ INTO TABLE C:\SIDOB\tablas\devo_base1.dbf  

@@ -1,0 +1,9 @@
+SELECT Dev_tipo.lugar, SUM(Dev_tipo.metros) AS metros, Causas.causa,;
+  Causas.tipo, 00 AS posicion;
+ FROM ;
+     dev_tipo ;
+    INNER JOIN ordenes!causas ;
+   ON  Dev_tipo.lugar = Causas.clave_c;
+ GROUP BY Dev_tipo.lugar;
+ ORDER BY 2 DESC;
+ INTO TABLE c:\SIDOB\tablas\orden_dev.dbf  

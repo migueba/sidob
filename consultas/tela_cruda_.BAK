@@ -1,0 +1,15 @@
+SELECT Telasgral.nombre, Almacenc.no_rollo, Almacenc.no_telar,;
+  Almacenc.mts, Almacenc.kgs,;
+  IIF(ISNULL(Observaciones.observacion),"                                                                            ",Observaciones.observacion) AS observacion,;
+  0 AS ok, Almacenc.fecha_s, Almacenc.clave_t, Telasgral.clave_tg,;
+  Almacenc.id_entrada, Almacenc.id_origen, Almacenc.peso;
+ FROM ;
+     almacenc ;
+    LEFT OUTER JOIN observaciones ;
+   ON  Almacenc.obs_clave = Observaciones.clave_obs ;
+    LEFT OUTER JOIN telasgral ;
+   ON  ALLTRIM(Almacenc.clave_t) = ALLTRIM(Telasgral.clave_tg);
+ WHERE (  Almacenc.muestras = ( 1 );
+   AND  Almacenc.recibida = ( 0 ) );
+   AND  Almacenc.estatus = ( 1 );
+ INTO TABLE C:\sidob\tablas\telacruda_doblado.dbf  

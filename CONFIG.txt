@@ -1,0 +1,3 @@
+MEDIDA : MTS ("/ MTS = METROS : 1 / CM = CENTIMETROS : 100 /") {clave = Descrip : cant_en_mts }
+INICIO : /FONDO/"c:\sidob\imagenes\1366_2000.JPG"/IMAGEN/"c:\sidob\imagenes\1366_2000.JPG"/MENSAJE/"NUEVO DOBLADO"
+CLAVE : "NDOBLADO"

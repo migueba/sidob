@@ -1,0 +1,12 @@
+select *,recno() as posic from Entradadob INTO TABLE tablas\Entradadob22.dbf 
+
+SELECT IIF(Entradadob22.folio=0,Entradadob22.tipo+"         ",ALLTRIM(STR(Entradadob22.folio))) AS folio, Entradadob22.fecha, ;
+Entradadob22.clave_t, Telas.nombre AS tela, Entradadob22.op, Entradadob22.metros, Entradadob22.kilos, 0 AS ok, ;
+(origen_numero.descrip), Entradadob22.ori, Entradadob22.sanf , Entradadob22.apr  , Entradadob22.color , Entradadob22.iddob, ;
+Entradadob22.origen,Entradadob22.posic ;
+FROM  entradadob22  ;
+LEFT OUTER JOIN telas  ON  Entradadob22.clave_t = Telas.clave_t ;
+LEFT OUTER JOIN origen_numero ON Entradadob22.origen = origen_numero.id  ;
+WHERE  Entradadob22.estatus = ( 1 ) AND  EMPTY(Entradadob22.salida) = ( .T. ) ;
+ORDER BY Telas.nombre, Entradadob22.folio ;
+INTO TABLE tablas\endoblado.dbf 

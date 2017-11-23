@@ -1,0 +1,11 @@
+SELECT Control_rem.id_rem AS remision, Control_rem.fecha_s,;
+  IIF(.NOT.EMPTY(Control_rem.fechaverif),"Recibida ","Pendiente") AS status,;
+  Control_rem.oper AS operador;
+ FROM ;
+     primera ;
+ INNER JOIN control_rem ON primera.remision == control_rem.id_rem ;
+ WHERE  Control_rem.id_rem >0 ;
+ AND Control_rem.estatus <> 0 ;
+ AND primera.clave_A == (datostring) ;
+ group by primera.remision ;
+ INTO TABLE C:\sidob\tablas\base_rem.dbf  

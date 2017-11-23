@@ -1,0 +1,7 @@
+SELECT Doblado_dev.*;
+ FROM ;
+     doblado!doblado_dev;
+ WHERE  Doblado_dev.estatus = ( 1 );
+ GROUP BY Doblado_dev.memorandum;
+ ORDER BY Doblado_dev.memorandum;
+ INTO TABLE tablas\base_dev.dbf  

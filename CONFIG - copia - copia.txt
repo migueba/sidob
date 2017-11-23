@@ -1,0 +1,3 @@
+MEDIDA : MTS ("/ MTS = METROS : 1 / CM = CENTIMETROS : 100 /") {clave = Descrip : cant_en_mts }
+INICIO : /FONDO/"c:\sidob\imagenes\fondo3.jpg"/IMAGEN/"c:\sidob\imagenes\yast_security.png"/MENSAJE/"Nuevo Sistema Prueba"
+CLAVE : "NDOBLADO"

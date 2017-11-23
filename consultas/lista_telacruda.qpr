@@ -1,0 +1,9 @@
+SELECT DISTINCT Telasgral.nombre, Almacenc.clave_t;
+ FROM ;
+     almacenc ;
+    LEFT OUTER JOIN telasgral ;
+   ON  ALLTRIM(Almacenc.clave_t) = ALLTRIM(Telasgral.clave_tg);
+ WHERE (  Almacenc.muestras = ( 1 );
+   AND  Almacenc.recibida = ( 0 ) );
+   AND  Almacenc.estatus = ( 1 );
+ INTO TABLE C:\sidob\tablas\cruda_lista.dbf  

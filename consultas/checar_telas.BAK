@@ -1,0 +1,20 @@
+SELECT Controlrem_prefe.id_rem AS folio_s,;
+  Controlrem_prefe.fecha_s AS salida,;
+  IIF(.NOT.EMPTY(Controlrem_prefe.fechaverif),"Recibida ","Pendiente") AS obspref,;
+  substr(trim(segunda.clave_t),1,len(trim(trim(segunda.clave_t))-3) as telag ;	
+ FROM ;
+     segunda ;
+ INNER JOIN controlrem_prefe ON segunda.remision = controlrem_prefe.id_rem ;
+ WHERE  Controlrem_prefe.estatus <> ( 0 );
+ INTO TABLE c:\sidob\tablas\guia_rem_telag.dbf  
+
+
+ select * from guia_rem_telag ;
+ where   guia_rem_telag.telag == (tel) ;
+ group by guia_rem_telag.folio_s ;
+ INTO TABLE c:\sidob\tablas\guia_rem.dbf  
+
+
+
+
+

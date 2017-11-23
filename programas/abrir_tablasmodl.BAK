@@ -1,0 +1,138 @@
+PUBLIC n_acceso,continuar_guardar , posicion_remisionar
+SET SAFETY OFF
+CLOSE DATABASES ALL
+CLOSE TABLES all
+
+SET DEFA TO C:\SIDOB         
+SET STATUS BAR ON
+SET SYSMENU on
+SET DATE DMY
+SET CENTURY ON
+SET DELETED ON
+SET ESCAPE off
+
+SET ENGINEBEHAVIOR 70
+SET REPORTBEHAVIOR 90
+N_ACCESO = 1
+posicion_remisionar = 0
+
+DO C:\SIDOB\FOXYPREVIEWER.APP
+OPEN DATABASE \\servidorp\almacenes$\almacen.dbc shared
+OPEN DATABASE \\servidorp\siven$\ventasdb.dbc SHARED
+OPEN DATABASE \\servidorp\bdcomparte$\compartidadb.dbc SHARED 
+OPEN DATABASE \\servidorp\siscop$\ORDENES.DBC SHARED
+OPEN DATABASE \\servidorp\asistencia$\sicoa.dbc SHARED
+OPEN DATABASE \\servidorp\sitej$\tejido.dbc SHARED 
+
+SELECT 1
+USE \\servidorp\almacenes$\almacenc SHARED
+SELECT 2
+USE \\servidorp\almacenes$\semanas_alm SHARED
+SELECT 3
+USE \\servidorp\almacenes$\ALMACENT.DBF SHARED
+
+SELECT 4
+USE \\servidorp\siven$\telas shared
+SELECT 5
+USE \\servidorp\siven$\telas_apre.dbf SHARED
+SELECT 6
+USE \\servidorp\siven$\TELAS_SANF.DBF SHARED
+SELECT 7
+USE \\servidorp\siven$\TELASGRAL SHARED
+SELECT 8
+use \\servidorp\bdcomparte$\usuarios shared
+SELECT 9
+USE \\servidorp\doblado$\ACCESO.DBF SHARED
+SELECT 10
+USE \\servidorp\bdcomparte$\hilos.dbf SHARED
+
+*SELECT 11
+*USE C:\DOBLADO\TABLAS\DATO_USUARIO.DBF SHARED
+
+SELECT 12
+USE \\servidorp\DOBLADO$\controlrem_prefe.DBF SHARED
+SELECT 13
+USE \\servidorp\DOBLADO$\causas.DBF SHARED
+SELECT 14
+USE \\servidorp\DOBLADO$\control_rem.dbf SHARED
+SELECT 15
+USE \\servidorp\DOBLADO$\cambios.dbf SHARED 
+SELECT 16
+USE \\servidorp\DOBLADO$\LIMITE.dbf SHARED
+SELECT 17
+USE \\servidorp\DOBLADO$\doblado_dev.DBF SHARED
+
+SELECT 18
+USE \\servidorp\asistencia$\empleados.dbf SHARE
+
+SELECT NUM_TRAB, (ALLTRIM(APATERNO)+" "+ALLTRIM(AMATERNO)+" "+ALLTRIM(NOMBRE)) AS Nom_t FROM EMPLEADOS;
+ WHERE ESTATUS = 1 AND( CLAVE_D =9  AND CLAVE_P <> 40) OR (NUM_TRAB = 628) OR (CLAVE_D =7 AND CLAVE_P=7) ORDER BY NUM_TRAB ;
+ INTO TABLE 'C:\SIDOB\TABLAS\TRABSJ.DBF'
+
+DO C:\SIDOB\CONSULTAS\LTELAS.QPR
+
+SELECT 20
+USE \\SERVIDORP\SISCOP$\EDOBLADO.DBF SHARED 
+
+SELECT 21
+USE \\SERVIDORP\DOBLADO$\RETACERIA.DBF SHARED
+
+SELECT 22
+USE \\SERVIDORP\DOBLADO$\CCDOB.DBF SHARED 
+
+SELECT 23
+USE \\SERVIDORP\DOBLADO$\SEGUNDA.DBF SHARED
+
+SELECT 24
+USE \\SERVIDORP\DOBLADO$\REPROCESOS.DBF SHARED
+
+SELECT 25
+USE \\SERVIDORP\DOBLADO$\ENTRADADOB.DBF SHARED
+
+SELECT 26
+USE \\SERVIDORP\DOBLADO$\telas_gr.DBF SHARED
+
+
+SELECT 27
+USE C:\SIDOB\TABLAS\_PARAROLLOS.DBF SHARED
+
+SELECT 28
+USE C:\SIDOB\TABLAS\_PARAFRANELAS.DBF SHARED
+
+SELECT 29
+USE \\servidorp\DOBLADO$\PRIMERA.DBF SHARED
+
+SELECT 30
+USE \\SERVIDORP\SISCOP$\CAMBIOS ALIAS cambio_clave SHARED 
+
+SELECT 31
+USE \\servidorp\almacenes$\maquilas.dbf SHARED 
+
+SELECT 32
+USE \\servidorp\DOBLADO$\DETALLE_DD.DBF SHARED
+
+SELECT 33
+USE \\SERVIDORP\SISCOP$\clave_color.DBF SHARED
+
+SELECT 34
+USE \\SERVIDORP\SISCOP$\colores.DBF SHARED
+
+SELECT 35
+USE \\SERVIDORP\SISCOP$\grupos.DBF ALIAS GRUPO_COLOR SHARED 
+
+SELECT 36
+USE \\servidorp\DOBLADO$\conceptos_ori.DBF SHARED
+
+SELECT 50
+USE \\servidorp\siven$\clientes.dbf shared
+
+SELECT 51
+SELECT clave_c, nombre FROM clientes WHERE !EMPTY(nombre) ORDER BY nombre INTO TABLE 'c:\sidob\tablas\cli.dbf'
+SELECT clientes
+USE
+
+*!*	Do form c:\sidob\formularios\dobladousuarios.scx 
+*!*	_screen.Visible = .f.
+
+*!*	wait windows "Cargando..." timeout 3 
+*!*	read events

@@ -1,0 +1,5 @@
+SELECT Telas.clave_t, Telas.nombre,;
+  IIF( Telas.crudos= .T.,  Telas.peso3,  Telas.peso) AS PESO;
+ FROM ventasdb!telas;
+ ORDER BY Telas.nombre;
+ INTO TABLE tablas\ltelas.dbf  

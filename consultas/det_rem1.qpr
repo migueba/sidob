@@ -1,0 +1,15 @@
+SELECT COUNT(Primera.id_ent) AS cantidad,;
+  IIF(Primera.tipo=1,"ROLLO",IIF(Primera.tipo=2,"PIEZA","N/D")) AS tipo,;
+  SUM(Primera.metros) AS metros, Entradadob.op AS id_orden, ;
+  substr(Primera.lote,1,ATC('/',Primera.lote)-1) as lote, ;
+  Telas.nombre,Telas.clave_tg, Telas.clave_t;
+ FROM ;
+     primera ;
+    INNER JOIN entradadob ;
+   ON  Primera.id_origen = Entradadob.iddob ;
+    INNER JOIN telas ;
+   ON  Primera.clave_a = Telas.clave_t;
+ WHERE  Primera.remision = ( _id_rem );
+ GROUP BY Primera.lote,Primera.clave_a;
+ ORDER BY Telas.nombre;
+ INTO TABLE c:\sidob\tablas\det_rem.dbf  

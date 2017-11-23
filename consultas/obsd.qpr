@@ -1,0 +1,4 @@
+SELECT Ccdob.causa, Ccdob.defecto;
+ FROM doblado!ccdob;
+ ORDER BY Ccdob.causa;
+ INTO TABLE tablas\obsd.dbf  

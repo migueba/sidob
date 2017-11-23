@@ -1,0 +1,4 @@
+SELECT DISTINCT Endoblado.clave_t, Endoblado.tela;
+ FROM ;
+     endoblado;
+ INTO TABLE tablas\telasdob.dbf  

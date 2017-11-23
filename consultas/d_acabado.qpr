@@ -1,0 +1,15 @@
+SELECT Edoblado.control, Edoblado.clave_t, Telas.nombre,;
+  IIF(EMPTY(Edoblado.recepcion),0,1) AS ok, Edoblado.metros,;
+  Edoblado.metros*Edoblado.peso AS kilos, Edoblado.id_entrada,;
+  Edoblado.fecha, Edoblado.recepcion, RECNO() AS renglon, Edoblado.obs,;
+  Edoblado.id_origen, Edoblado.telag, Edoblado.peso, Edoblado.id_orden,;
+  Edoblado.origen AS ori , edoblado.sanforizado as sanf , edoblado.apr , edoblado.color, ;
+  Edoblado.Af1 , Edoblado.Af2 ;
+ FROM ;
+     ordenes!edoblado ;
+    LEFT OUTER JOIN ventasdb!telas ;
+   ON  Edoblado.clave_t = Telas.clave_t;
+ WHERE (  Edoblado.estatus = ( 1 );
+   AND  Edoblado.tipo = ( "PRO" ) );
+   AND  Edoblado.control <> ( 0 );
+ INTO TABLE tablas\d_acabado.dbf  

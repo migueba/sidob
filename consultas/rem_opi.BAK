@@ -1,0 +1,12 @@
+SELECT Control_rem.id_rem AS remision, Control_rem.fecha_s,;
+  IIF(.NOT.EMPTY(Control_rem.fechaverif),"Recibida ","Pendiente") AS status,;
+  Control_rem.oper AS operador;
+ FROM ;
+     primera ;
+ INNER JOIN control_rem ON primera.remision == control_rem.id_rem ;
+ INNER JOIN entradadob ON primera.id_origen  == entradadob.iddob ;
+ WHERE  Control_rem.id_rem >0 ;
+ AND Control_rem.estatus <> 0 ;
+ AND entradadob.op == (dato1) ;
+ group by rem_telag_lista.remision ;
+ INTO TABLE C:\sidob\tablas\base_rem.dbf  

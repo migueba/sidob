@@ -1,0 +1,7 @@
+SELECT IIF(tipo=1,1,0) AS rollo, IIF(tipo=2,1,0) AS retazo,;
+  Detalle_dd.mts_repor, Detalle_dd.mts_reales, Detalle_dd.obser,;
+  IIF(Detalle_dd.destino=1,"Terminados   ",IIF(destino=2,"Preferidas",IIF(destino=3,"Retazo",IIF(destino=4,"Reproceso","Pendiente")))) AS destiny,;
+  Detalle_dd.lote, Detalle_dd.remision, Detalle_dd.nmemo;
+ FROM ;
+     doblado!detalle_dd;
+ INTO TABLE tablas\deta_d.dbf  

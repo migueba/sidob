@@ -1,0 +1,6 @@
+SELECT Doblado_dev.*;
+ FROM ;
+     doblado!doblado_dev;
+ WHERE  Doblado_dev.fechad >= ( dato3 );
+ ORDER BY Doblado_dev.nmemo;
+ INTO TABLE tablas\dev_base.dbf  

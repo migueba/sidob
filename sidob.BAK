@@ -1,0 +1,25 @@
+Compiling c:\sidob\consultas\endoblado.qpr
+SELECT IIF(Entradadob.folio=0,Entradadob.tipo+"         ",ALLTRIM(STR(Entradadob.folio))) AS folio, Entradadob.fecha, Entradadob.clave_t, Telas.nombre AS tela, Entradadob.op, Entradadob.metros, Entradadob.kilos, 0 AS ok, (origen_numero.descrip), Entradadob.ori, Entradadob.sanf , Entradadob.apr  , Entradadob.color , Entradadob.iddob, Entradadob.origen, RECNO() AS posic FROM  entradadob  LEFT OUTER JOIN telas  ON  Entradadob.clave_t = Telas.clave_t LEFT OUTER JOIN origen_numero
+Error in line 11: Syntax error.
+ON Entradadob.origen = origen_numero.id  WHERE  Entradadob.estatus = ( 1 ) AND  EMPTY(Entradadob.salida) = ( .T. ) ORDER BY Telas.nombre, Entradadob.folio INTO TABLE tablas\endoblado.dbf  
+Error in line 16: Syntax error.
+
+Form c:\sidob\formularios\dobladodevoluciones.scx has the following errors:
+    File ICONO 1.PNG - Undefined
+
+Visual Class Library c:\sidob\clases\xpwizard.vcx has the following errors:
+    File OK1.JPG - Undefined
+
+Form c:\sidob\formularios\remisiones.scx has the following errors:
+    File FILTER.BMP - Undefined
+
+Form c:\sidob\formularios\dobladousuarios.scx has the following errors:
+    File APPLY.PNG - Undefined
+    File SALIR.PNG - Undefined
+
+Form c:\sidob\formularios\entradas.scx has the following errors:
+    File FILTER.BMP - Undefined
+
+Form c:\sidob\formularios\existencia_doblado.scx has the following errors:
+    File FILTER.BMP - Undefined
+

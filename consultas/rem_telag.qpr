@@ -1,0 +1,17 @@
+SELECT Control_rem.id_rem AS remision, Control_rem.fecha_s,;
+  IIF(.NOT.EMPTY(Control_rem.fechaverif),"Recibida ","Pendiente") AS status,;
+  Control_rem.oper AS operador , ;
+  substr(trim(primera.clave_A),1,len(trim(primera.clave_a))-3) as telag ;
+ FROM ;
+     primera ;
+ INNER JOIN control_rem ON  primera.remision ==  control_rem.id_rem ;
+ WHERE  Control_rem.id_rem >0 ;
+ AND Control_rem.estatus <> 0 ;
+ INTO TABLE C:\sidob\tablas\rem_telag_lista.dbf  
+
+SELECT * ;
+ FROM ;
+     rem_telag_lista ;
+ WHERE  rem_telag_lista.telag = (datostring) ;
+ group by rem_telag_lista.remision ;
+ INTO TABLE C:\sidob\tablas\base_rem.dbf  
